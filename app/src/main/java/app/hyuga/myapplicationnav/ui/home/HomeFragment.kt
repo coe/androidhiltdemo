@@ -12,6 +12,7 @@ import app.hyuga.myapplicationnav.R
 import app.hyuga.myapplicationnav.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
