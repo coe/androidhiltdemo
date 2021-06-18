@@ -3,7 +3,7 @@ package app.hyuga.myapplicationnav.di
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.components.FragmentComponent
 import javax.inject.Inject
 
 interface AnalyticsService {
@@ -21,7 +21,7 @@ class AnalyticsServiceImpl @Inject constructor(
 }
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(FragmentComponent::class)
 abstract class AnalyticsModule {
 
     @Binds

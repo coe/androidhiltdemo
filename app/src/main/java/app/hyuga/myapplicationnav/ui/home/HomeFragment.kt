@@ -1,6 +1,7 @@
 package app.hyuga.myapplicationnav.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,12 +9,15 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import app.hyuga.myapplicationnav.AnalyticsAdapter
 import app.hyuga.myapplicationnav.R
 import app.hyuga.myapplicationnav.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
+    @Inject lateinit var analytics: AnalyticsAdapter
 
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
@@ -27,6 +31,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("HomeFragment",analytics.aaa())
         homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 

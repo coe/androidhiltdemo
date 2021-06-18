@@ -15,12 +15,10 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    @Inject lateinit var analytics: AnalyticsAdapter
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(analytics.aaa(),analytics.aaa())
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
