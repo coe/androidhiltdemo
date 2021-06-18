@@ -2,9 +2,12 @@ package app.hyuga.myapplicationnav.di
 
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.FragmentComponent
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
+import javax.inject.Singleton
 
 interface AnalyticsService {
     fun analyticsMethods(): String
@@ -21,9 +24,10 @@ class AnalyticsServiceImpl @Inject constructor(
 }
 
 @Module
-@InstallIn(FragmentComponent::class)
+@InstallIn(SingletonComponent::class)
 abstract class AnalyticsModule {
 
+    @Singleton
     @Binds
     abstract fun bindAnalyticsService(
         analyticsServiceImpl: AnalyticsServiceImpl
